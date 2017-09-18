@@ -6,26 +6,25 @@
             function analytics() {
                 let navigator = window.navigator;
                 let browser = "Other"
-                console.log('User agent is: ', navigator.userAgent)
-                if ((navigator.userAgent.indexOf('Chrome/') != -1 || navigator.userAgent.indexOf('Chromium/') == -1) && (navigator.userAgent.indexOf('UCBrowser/') == -1 && navigator.userAgent.indexOf('UBrowser/') == -1 && navigator.userAgent.indexOf('UC Browser/') == -1 && navigator.userAgent.indexOf('UCWEB/') == -1 && navigator.userAgent.indexOf('Opera Mini/') == -1 && navigator.userAgent.indexOf('Edge/') ==-1))
+                console.log('User agent is=====>: ', navigator.userAgent)
+                if ((navigator.userAgent.indexOf('Chrome/') != -1 || navigator.userAgent.indexOf('Chromium/') == -1) && (navigator.userAgent.indexOf('UCBrowser/') == -1 && navigator.userAgent.indexOf('UBrowser/') == -1 && navigator.userAgent.indexOf('UC Browser/') == -1 && navigator.userAgent.indexOf('UCWEB/') == -1 && navigator.userAgent.indexOf('Opera Mini/') == -1 && navigator.userAgent.indexOf('Edge/') ==-1 && navigator.userAgent.indexOf('OPR') ==-1))
                     browser = navigator.userAgent.toString().split(' ').filter(e => e.indexOf('Chrome/') !== -1)[0];
     
                 alert(browser);
-                if (navigator.userAgent.indexOf('Safari/') != -1 && navigator.userAgent.indexOf('Chromium/') == -1 && navigator.userAgent.indexOf('Chrome/') == -1 && navigator.userAgent.indexOf('UCBrowser') == -1)
+                if (navigator.userAgent.indexOf('Safari/i') != -1 && navigator.userAgent.indexOf('Chromium/i') == -1 && navigator.userAgent.indexOf('Chrome/i') == -1 && navigator.userAgent.indexOf('UCBrowser/i') == -1)
                     browser = navigator.userAgent.toString().split(' ').filter(e => e.indexOf('Safari/') !== -1)[0];
     
-                if (navigator.userAgent.indexOf('Opera/') != -1 || navigator.userAgent.indexOf('Opr/') != -1)
-                    browser = navigator.userAgent.split(' ').filter(e => e.indexOf('Opera/') != -1 || e.indexOf('Opr/') != -1)[0];
-    
-                if (navigator.userAgent.indexOf('Firefox/') != -1 && navigator.userAgent.indexOf('Seamonkey/') == -1)
+                if (navigator.userAgent.indexOf('Opera/i') != -1 || navigator.userAgent.indexOf('Opr/i') != -1)
+                    browser = 'Opera';
+                if (navigator.userAgent.indexOf('Firefox/i') != -1 && navigator.userAgent.indexOf('Seamonkey/i') == -1)
                     browser = navigator.userAgent.split(' ').filter(e => e.indexOf("Firefox") != -1)[0];
     
-                if (navigator.userAgent.indexOf('UCBrowser/') != -1 || navigator.userAgent.indexOf('UC Browser/') != -1 || navigator.userAgent.indexOf('UBrowser/') != -1)
+                if (navigator.userAgent.indexOf('UCBrowser/') != -1 || navigator.userAgent.indexOf('UC Browser/i') != -1 || navigator.userAgent.indexOf('UBrowser/i') != -1)
                     browser = 'UCBrowser';
                 if (navigator.userAgent.indexOf('UCWEB/') != -1)
                     browser = 'UCWEB';
-                if (navigator.userAgent.indexOf('MSIE') != -1 || navigator.userAgent.indexOf('Edge/') != -1)
-                    browser = navigator.userAgent.indexOf('MSIE') != -1 ? 'IE' : 'Edge';
+                if (navigator.userAgent.indexOf('MSIE/i') != -1 || navigator.userAgent.indexOf('Edge/i') != -1)
+                    browser = navigator.userAgent.indexOf('MSIE/i') != -1 ? 'IE' : 'Edge';
     
                 let device = navigator.userAgent.match(/Android|Micromax|BlackBerry|Lenovo|spreadtrum|iPhone|iPad|iPod|Opera Mini|IEMobile|Nokia|symbian|HTC|Mobile/i) ? 'Mobile' : 'Desktop';
                 alert(browser);
