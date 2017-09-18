@@ -7,18 +7,18 @@
             let userAgent = window.navigator.userAgent.toLowerCase();
             let browser = "Other"
             alert(userAgent)
-            if ((userAgent.indexOf('chrome/') != -1 || userAgent.indexOf('chromium/') != -1) && (userAgent.indexOf('ucbrowser/') == -1 && userAgent.indexOf('ubrowser/') == -1 && userAgent.indexOf('uc browser/') == -1 && userAgent.indexOf('ucweb/') == -1 && userAgent.indexOf('opera mini/') == -1 && userAgent.indexOf('edge/') == -1 && userAgent.indexOf('opr/') == -1 && userAgent.indexOf('opera mobile/') == -1 && userAgent.indexOf('vivaldi/') == -1))
+            if ((userAgent.indexOf('chrome/') != -1 || userAgent.indexOf('chromium/') != -1) && (userAgent.indexOf('ucbrowser/') == -1 && userAgent.indexOf('ubrowser/') == -1 && userAgent.indexOf('uc browser/') == -1 && userAgent.indexOf('ucweb/') == -1 && userAgent.indexOf('opera mini/') == -1 && userAgent.indexOf('edge/') == -1 && userAgent.indexOf('opr/') == -1 && userAgent.indexOf('opera mobile/') == -1 && userAgent.indexOf('vivaldi/') == -1 && userAgent.indexOf('dragon/') == -1))
                 browser = 'Chrome';
-
             alert(browser);
             if (userAgent.indexOf('safari/') != -1 && userAgent.indexOf('chromium/') == -1 && userAgent.indexOf('chrome/') == -1 && userAgent.indexOf('ucbrowser/') == -1 && userAgent.indexOf('vivaldi/') == -1)
                 browser = 'Safari'
 
             if (userAgent.indexOf('opera/') != -1 || userAgent.indexOf('opr/') != -1)
                 browser = 'Opera';
-            if (userAgent.indexOf('opera '))
-                if (userAgent.indexOf('firefox/') != -1 && userAgent.indexOf('seamonkey/') == -1)
-                    browser = 'Firefox';
+            if (userAgent.indexOf('opera mobile/'))
+                browser = 'Opera Mobile';
+            if (userAgent.indexOf('firefox/') != -1 && userAgent.indexOf('seamonkey/') == -1)
+                browser = 'Firefox';
             if (userAgent.indexOf('seamonkey/') != -1)
                 browser = 'Seamonkey';
             if (userAgent.indexOf('ucbrowser/') != -1 || userAgent.indexOf('uc browser/') != -1 || userAgent.indexOf('ubrowser/') != -1)
@@ -28,7 +28,9 @@
             if (userAgent.indexOf('msie/') != -1 || userAgent.indexOf('edge/') != -1)
                 browser = userAgent.indexOf('msie/') != -1 ? 'IE' : 'Edge';
             if (userAgent.indexOf('vivaldi') != -1)
-                browser = 'Vivaldi'
+                browser = 'Vivaldi';
+            if (userAgent.indexOf('dragon/') != -1)
+                browser = 'Dragon';
             if (browser == 'Other')
                 browser = userAgent.toUpperCase().match(/Android|Micromax|BlackBerry|Lenovo|spreadtrum|iPhone|iPad|iPod|Opera Mini|IEMobile|Nokia|HTC|Mobile|LG|Nexus|Micromax|Moto|Motorola|Oneplus/i);
             let device = userAgent.match(/Android|Micromax|BlackBerry|Lenovo|spreadtrum|iPhone|iPad|iPod|Opera Mini|IEMobile|Nokia|symbian|HTC|Mobile/i) ? 'Mobile' : 'Desktop';
