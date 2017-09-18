@@ -1,41 +1,41 @@
 <html>
-    
-    <head>
-        <title>Analytics</title>
-        <script>
-            function analytics() {
-                let userAgent = window.navigator.userAgent.toLowerCase();
-                let browser = "Other"
-                alert(userAgent)
-                if ((userAgent.indexOf('Chrome/') != -1 || userAgent.indexOf('Chromium/') == -1) && (userAgent.indexOf('UCBrowser/') == -1 && userAgent.indexOf('UBrowser/') == -1 && userAgent.indexOf('UC Browser/') == -1 && userAgent.indexOf('UCWEB/') == -1 && userAgent.indexOf('Opera Mini/') == -1 && userAgent.indexOf('Edge/') ==-1 && userAgent.indexOf('OPR') ==-1))
-                    browser = userAgent.toString().split(' ').filter(e => e.indexOf('Chrome/') !== -1)[0];
-    
-                alert(browser);
-                if (userAgent.indexOf('Safari/') != -1 && userAgent.indexOf('Chromium/') == -1 && userAgent.indexOf('Chrome/') == -1 && userAgent.indexOf('UCBrowser') == -1)
-                    browser = userAgent.toString().split(' ').filter(e => e.indexOf('Safari/') !== -1)[0];
-    
-                if (userAgent.indexOf('Opera/i') != -1 || userAgent.indexOf('Opr/i') != -1)
-                    browser = 'Opera';
-    
-                if (userAgent.indexOf('Firefox/i') != -1 && userAgent.indexOf('Seamonkey/i') == -1)
-                    browser = userAgent.split(' ').filter(e => e.indexOf("Firefox") != -1)[0];
-    
-                if (userAgent.indexOf('UCBrowser/') != -1 || userAgent.indexOf('UC Browser/i') != -1 || userAgent.indexOf('UBrowser/i') != -1)
-                    browser = 'UCBrowser';
-                if (userAgent.indexOf('UCWEB/') != -1)
-                    browser = 'UCWEB';
-                if (userAgent.indexOf('MSIE/i') != -1 || userAgent.indexOf('Edge/i') != -1)
-                    browser = userAgent.indexOf('MSIE/i') != -1 ? 'IE' : 'Edge';
-    
-                let device = userAgent.match(/Android|Micromax|BlackBerry|Lenovo|spreadtrum|iPhone|iPad|iPod|Opera Mini|IEMobile|Nokia|symbian|HTC|Mobile/i) ? 'Mobile' : 'Desktop';
-                alert(browser);
-                alert(device);
-            }
-        </script>
-    </head>
-    
-    <body>
-        <input type="button" value="Analytics" onclick="analytics()" />
-    </body>
-    
-    </html>
+
+<head>
+    <title>Analytics</title>
+    <script>
+        function analytics() {
+            let userAgent = window.navigator.userAgent.toLowerCase();
+            let browser = "Other"
+            alert(userAgent)
+            if ((userAgent.indexOf('chrome/') != -1 || userAgent.indexOf('chromium/') == -1) && (userAgent.indexOf('ucbrowser/') == -1 && userAgent.indexOf('ubrowser/') == -1 && userAgent.indexOf('uc browser/') == -1 && userAgent.indexOf('ucweb/') == -1 && userAgent.indexOf('opera mini/') == -1 && userAgent.indexOf('edge/') == -1 && userAgent.indexOf('opr') == -1))
+                browser = 'Chrome';
+
+            alert(browser);
+            if (userAgent.indexOf('safari/') != -1 && userAgent.indexOf('chromium/') == -1 && userAgent.indexOf('chrome/') == -1 && userAgent.indexOf('ucbrowser/') == -1)
+                browser = 'Safari'
+
+            if (userAgent.indexOf('opera/') != -1 || userAgent.indexOf('opr/') != -1)
+                browser = 'Opera';
+            if (userAgent.indexOf('firefox/') != -1 && userAgent.indexOf('seamonkey/') == -1)
+                browser = 'Firefox';
+            if (userAgent.indexOf('seamonkey/') != -1)
+                browser = 'Seamonkey';
+            if (userAgent.indexOf('ucbrowser/') != -1 || userAgent.indexOf('uc browser/i') != -1 || userAgent.indexOf('ubrowser/i') != -1)
+                browser = 'UC Browser';
+            if (userAgent.indexOf('ucweb/') != -1)
+                browser = 'UCWEB';
+            if (userAgent.indexOf('msie/') != -1 || userAgent.indexOf('edge/') != -1)
+                browser = userAgent.indexOf('msie/') != -1 ? 'IE' : 'Edge';
+
+            let device = userAgent.match(/Android|Micromax|BlackBerry|Lenovo|spreadtrum|iPhone|iPad|iPod|Opera Mini|IEMobile|Nokia|symbian|HTC|Mobile/i) ? 'Mobile' : 'Desktop';
+            alert(browser);
+            alert(device);
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="Analytics" onclick="analytics()" />
+</body>
+
+</html>
