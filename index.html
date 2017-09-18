@@ -4,7 +4,9 @@
     <title>Analytics</title>
     <script>
         function analytics() {
-            alert('okkkk');
+            window.alert = null;
+            delete window.alert;
+            alert('test');
             let userAgent = window.navigator.userAgent.toLowerCase();
             let browser = "Other"
             alert(userAgent)
@@ -45,7 +47,7 @@
 </head>
 
 <body>
-    <input type="button" value="Analytics" onclick="alert('ok')" />
+    <input type="button" value="Analytics" onclick="analytics()" />
 </body>
 
 </html>
