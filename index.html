@@ -6,7 +6,7 @@
             function analytics() {
                 let userAgent = window.navigator.userAgent.toLowerCase();
                 let browser = "Other"
-                console.log('User agent is: ', userAgent);
+                alert(userAgent)
                 if ((userAgent.indexOf('Chrome/') != -1 || userAgent.indexOf('Chromium/') == -1) && (userAgent.indexOf('UCBrowser/') == -1 && userAgent.indexOf('UBrowser/') == -1 && userAgent.indexOf('UC Browser/') == -1 && userAgent.indexOf('UCWEB/') == -1 && userAgent.indexOf('Opera Mini/') == -1 && userAgent.indexOf('Edge/') ==-1 && userAgent.indexOf('OPR') ==-1))
                     browser = userAgent.toString().split(' ').filter(e => e.indexOf('Chrome/') !== -1)[0];
     
