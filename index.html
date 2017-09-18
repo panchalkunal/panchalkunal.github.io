@@ -4,9 +4,6 @@
     <title>Analytics</title>
     <script>
         function analytics() {
-            window.alert = null;
-            delete window.alert;
-            alert('test');
             let userAgent = window.navigator.userAgent.toLowerCase();
             let browser = "Other"
             alert(userAgent)
