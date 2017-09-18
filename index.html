@@ -10,7 +10,7 @@
                 if ((navigator.userAgent.indexOf('Chrome/') != -1 || navigator.userAgent.indexOf('Chromium/') == -1) && (navigator.userAgent.indexOf('UCBrowser/') == -1 && navigator.userAgent.indexOf('UBrowser/') == -1 && navigator.userAgent.indexOf('UC Browser/') == -1 && navigator.userAgent.indexOf('UCWEB/') == -1 && navigator.userAgent.indexOf('Opera Mini/') == -1 && navigator.userAgent.indexOf('Edge/') ==-1))
                     browser = navigator.userAgent.toString().split(' ').filter(e => e.indexOf('Chrome/') !== -1)[0];
     
-                console.log('Browser: ', browser);
+                alert(browser);
                 if (navigator.userAgent.indexOf('Safari/') != -1 && navigator.userAgent.indexOf('Chromium/') == -1 && navigator.userAgent.indexOf('Chrome/') == -1 && navigator.userAgent.indexOf('UCBrowser') == -1)
                     browser = navigator.userAgent.toString().split(' ').filter(e => e.indexOf('Safari/') !== -1)[0];
     
@@ -28,7 +28,8 @@
                     browser = navigator.userAgent.indexOf('MSIE') != -1 ? 'IE' : 'Edge';
     
                 let device = navigator.userAgent.match(/Android|Micromax|BlackBerry|Lenovo|spreadtrum|iPhone|iPad|iPod|Opera Mini|IEMobile|Nokia|symbian|HTC|Mobile/i) ? 'Mobile' : 'Desktop';
-                console.log(browser, '\n', device);
+                alert(browser);
+                alert(device);
             }
         </script>
     </head>
