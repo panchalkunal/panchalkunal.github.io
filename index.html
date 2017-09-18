@@ -4,18 +4,18 @@
     <title>Analytics</title>
     <script>
         function analytics() {
+            alert('okkkk');
             let userAgent = window.navigator.userAgent.toLowerCase();
             let browser = "Other"
             alert(userAgent)
             if ((userAgent.indexOf('chrome/') != -1 || userAgent.indexOf('chromium/') != -1) && (userAgent.indexOf('ucbrowser/') == -1 && userAgent.indexOf('ubrowser/') == -1 && userAgent.indexOf('uc browser/') == -1 && userAgent.indexOf('ucweb/') == -1 && userAgent.indexOf('opera mini/') == -1 && userAgent.indexOf('edge/') == -1 && userAgent.indexOf('opr/') == -1 && userAgent.indexOf('opera mobile/') == -1 && userAgent.indexOf('vivaldi/') == -1 && userAgent.indexOf('dragon/') == -1))
                 browser = 'Chrome';
             alert(browser);
-            if (userAgent.indexOf('safari/') != -1 && userAgent.indexOf('chromium/') == -1 && userAgent.indexOf('chrome/') == -1 && userAgent.indexOf('ucbrowser/') == -1 && userAgent.indexOf('vivaldi/') == -1)
+            if (userAgent.indexOf('safari/') != -1 && userAgent.indexOf('chromium/') == -1 && userAgent.indexOf('chrome/') == -1 && userAgent.indexOf('ubrowser/') == -1 && userAgent.indexOf('uc browser/') == -1 && userAgent.indexOf('ucweb/') == -1 && userAgent.indexOf('opera mini/') == -1 && userAgent.indexOf('opr/') == -1 && userAgent.indexOf('opera mobile/') == -1 && userAgent.indexOf('vivaldi/') == -1 && userAgent.indexOf('dragon/') == -1)
                 browser = 'Safari'
-
             if (userAgent.indexOf('opera/') != -1 || userAgent.indexOf('opr/') != -1)
                 browser = 'Opera';
-            if (userAgent.indexOf('opera mobile/'))
+            if (userAgent.indexOf('opera mobile/') != -1)
                 browser = 'Opera Mobile';
             if (userAgent.indexOf('firefox/') != -1 && userAgent.indexOf('seamonkey/') == -1)
                 browser = 'Firefox';
@@ -31,6 +31,10 @@
                 browser = 'Vivaldi';
             if (userAgent.indexOf('dragon/') != -1)
                 browser = 'Dragon';
+            if (userAgent.indexOf('chromium os') != -1 || userAgent.indexOf('chromiumos/') != -1)
+                browser = 'Chromium OS';
+            if (userAgent.indexOf('safezones') != -1 || userAgent.indexOf('safezone') != -1)
+                browser = 'SafeZone';
             if (browser == 'Other')
                 browser = userAgent.toUpperCase().match(/Android|Micromax|BlackBerry|Lenovo|spreadtrum|iPhone|iPad|iPod|Opera Mini|IEMobile|Nokia|HTC|Mobile|LG|Nexus|Micromax|Moto|Motorola|Oneplus/i);
             let device = userAgent.match(/Android|Micromax|BlackBerry|Lenovo|spreadtrum|iPhone|iPad|iPod|Opera Mini|IEMobile|Nokia|symbian|HTC|Mobile/i) ? 'Mobile' : 'Desktop';
