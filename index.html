@@ -7,7 +7,7 @@
                 let navigator = window.navigator;
                 let browser = "Other"
                 console.log('User agent is=====>: ', navigator.userAgent)
-                if ((navigator.userAgent.indexOf('Chrome/') != -1 || navigator.userAgent.indexOf('Chromium/') == -1) && (navigator.userAgent.indexOf('UCBrowser/') == -1 && navigator.userAgent.indexOf('UBrowser/') == -1 && navigator.userAgent.indexOf('UC Browser/') == -1 && navigator.userAgent.indexOf('UCWEB/') == -1 && navigator.userAgent.indexOf('Opera Mini/') == -1 && navigator.userAgent.indexOf('Edge/') ==-1 && navigator.userAgent.indexOf('OPR') ==-1))
+                if ((navigator.userAgent.indexOf('Chrome/i') != -1 || navigator.userAgent.indexOf('Chromium/i') == -1) && (navigator.userAgent.indexOf('UCBrowser/i') == -1 && navigator.userAgent.indexOf('UBrowser/i') == -1 && navigator.userAgent.indexOf('UC Browser/i') == -1 && navigator.userAgent.indexOf('UCWEB/i') == -1 && navigator.userAgent.indexOf('Opera Mini/i') == -1 && navigator.userAgent.indexOf('Edge/i') ==-1 && navigator.userAgent.indexOf('OPR/i') ==-1))
                     browser = navigator.userAgent.toString().split(' ').filter(e => e.indexOf('Chrome/') !== -1)[0];
     
                 alert(browser);
