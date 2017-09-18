@@ -4,29 +4,30 @@
         <title>Analytics</title>
         <script>
             function analytics() {
-                let navigator = window.navigator;
+                let userAgent = window.navigator.userAgent.toLowerCase();
                 let browser = "Other"
-               alert('Useragent is: ' +  navigator.userAgent);
-                if ((navigator.userAgent.search(/Chrome\//i) != -1 || navigator.userAgent.search(/Chromium\//i) == -1) && (navigator.userAgent.search(/UCBrowser\//i) == -1 && navigator.userAgent.search(/UBrowser\//i) == -1 && navigator.userAgent.search(/UC Browser\//i) == -1 && navigator.userAgent.search(/UCWEB\//i) == -1 && navigator.userAgent.search(/Opera Mini\//i) == -1 && navigator.userAgent.search(/Edge\//i) ==-1 && navigator.userAgent.search(/OPR\//i) ==-1))
-                    browser = navigator.userAgent.toString().split(' ').filter(e => e.toLowerCase().indexOf('chrome/') !== -1)[0];
+                console.log('User agent is: ', userAgent);
+                if ((userAgent.indexOf('Chrome/') != -1 || userAgent.indexOf('Chromium/') == -1) && (userAgent.indexOf('UCBrowser/') == -1 && userAgent.indexOf('UBrowser/') == -1 && userAgent.indexOf('UC Browser/') == -1 && userAgent.indexOf('UCWEB/') == -1 && userAgent.indexOf('Opera Mini/') == -1 && userAgent.indexOf('Edge/') ==-1 && userAgent.indexOf('OPR') ==-1))
+                    browser = userAgent.toString().split(' ').filter(e => e.indexOf('Chrome/') !== -1)[0];
     
                 alert(browser);
-                if (navigator.userAgent.search(/Safari\//i) != -1 && navigator.userAgent.search(/Chromium\//i) == -1 && navigator.userAgent.search(/Chrome\//i) == -1 && navigator.userAgent.search(/UCBrowser\//i) == -1)
-                    browser = navigator.userAgent.toString().split(' ').filter(e => e.search('Safari/') !== -1)[0];
+                if (userAgent.indexOf('Safari/') != -1 && userAgent.indexOf('Chromium/') == -1 && userAgent.indexOf('Chrome/') == -1 && userAgent.indexOf('UCBrowser') == -1)
+                    browser = userAgent.toString().split(' ').filter(e => e.indexOf('Safari/') !== -1)[0];
     
-                if (navigator.userAgent.search(/Opera\//i) != -1 || navigator.userAgent.search(/Opr\//i) != -1)
+                if (userAgent.indexOf('Opera/i') != -1 || userAgent.indexOf('Opr/i') != -1)
                     browser = 'Opera';
-                if (navigator.userAgent.search('Firefox/i') != -1 && navigator.userAgent.search('Seamonkey/i') == -1)
-                    browser = navigator.userAgent.split(' ').filter(e => e.toLowerCase().indexOf("firefox") != -1)[0];
     
-                if (navigator.userAgent.search(/UCBrowser\//i) != -1 || navigator.userAgent.search(/UC Browser\//i) != -1 || navigator.userAgent.search(/UBrowser\//i) != -1)
+                if (userAgent.indexOf('Firefox/i') != -1 && userAgent.indexOf('Seamonkey/i') == -1)
+                    browser = userAgent.split(' ').filter(e => e.indexOf("Firefox") != -1)[0];
+    
+                if (userAgent.indexOf('UCBrowser/') != -1 || userAgent.indexOf('UC Browser/i') != -1 || userAgent.indexOf('UBrowser/i') != -1)
                     browser = 'UCBrowser';
-                if (navigator.userAgent.search(/UCWEB\//i) != -1)
+                if (userAgent.indexOf('UCWEB/') != -1)
                     browser = 'UCWEB';
-                if (navigator.userAgent.search(/MSIE\//i) != -1 || navigator.userAgent.search(/Edge\//i) != -1)
-                    browser = navigator.userAgent.toLowerCase().indexOf('msie/i') != -1 ? 'IE' : 'Edge';
+                if (userAgent.indexOf('MSIE/i') != -1 || userAgent.indexOf('Edge/i') != -1)
+                    browser = userAgent.indexOf('MSIE/i') != -1 ? 'IE' : 'Edge';
     
-                let device = navigator.userAgent.match(/Android|Micromax|BlackBerry|Lenovo|spreadtrum|iPhone|iPad|iPod|Opera Mini|IEMobile|Nokia|symbian|HTC|Mobile/i) ? 'Mobile' : 'Desktop';
+                let device = userAgent.match(/Android|Micromax|BlackBerry|Lenovo|spreadtrum|iPhone|iPad|iPod|Opera Mini|IEMobile|Nokia|symbian|HTC|Mobile/i) ? 'Mobile' : 'Desktop';
                 alert(browser);
                 alert(device);
             }
