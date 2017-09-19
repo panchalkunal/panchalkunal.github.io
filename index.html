@@ -1,20 +1,43 @@
 <html>
-    
-    <head>
-        <title>Analytics</title>
-    
-        <script>
-            function myFunction() {
-                document.getElementById("analyticsDiv").innerHTML = "Hello World";
-            }
-            </script>
-    </head>
-    
-    <body>
-        <input type="button" onclick="myFunction()" value="Analytics" id="anaBtn" />
-        <div id="analyticsDiv">
-    
-        </div>
-    </body>
-    
-    </html>
+
+<head>
+    <title>Analytics</title>
+
+    <script>
+        function myFunction() {
+            var el = document.getElementById("analyticsDiv");
+            el.innerHTML = "";
+            let userAgent = window.navigator.userAgent.toLowerCase();
+            let browser = "Other"
+            el.innerHTML = el.innerHTML + '<p>Useragent is: ' + userAgent + '</p>';
+
+            if ((userAgent.indexOf('chrome/') != -1 || userAgent.indexOf('chromium/') != -1) && (userAgent.indexOf('ucbrowser/') == -1 && userAgent.indexOf('ubrowser/') == -1 && userAgent.indexOf('uc browser/') == -1 && userAgent.indexOf('ucweb/') == -1 && userAgent.indexOf('opera mini/') == -1 && userAgent.indexOf('edge/') == -1 && userAgent.indexOf('opr/') == -1 && userAgent.indexOf('opera mobile/') == -1 && userAgent.indexOf('vivaldi/') == -1 && userAgent.indexOf('dragon/') == -1)) browser = 'Chrome';
+            el.innerHTML = el.innerHTML + '<p>First browser: ' + browser + '</p>';
+            if (userAgent.indexOf('safari/') != -1 && userAgent.indexOf('chromium/') == -1 && userAgent.indexOf('chrome/') == -1 && userAgent.indexOf('ubrowser/') == -1 && userAgent.indexOf('uc browser/') == -1 && userAgent.indexOf('ucweb/') == -1 && userAgent.indexOf('opera mini/') == -1 && userAgent.indexOf('opr/') == -1 && userAgent.indexOf('opera mobile/') == -1 && userAgent.indexOf('vivaldi/') == -1 && userAgent.indexOf('dragon/') == -1) browser = 'Safari'
+            if (userAgent.indexOf('opera/') != -1 || userAgent.indexOf('opr/') != -1) browser = 'Opera';
+            if (userAgent.indexOf('opera mobile/') != -1) browser = 'Opera Mobile';
+            if (userAgent.indexOf('firefox/') != -1 && userAgent.indexOf('seamonkey/') == -1) browser = 'Firefox';
+            if (userAgent.indexOf('seamonkey/') != -1) browser = 'Seamonkey';
+            if (userAgent.indexOf('ucbrowser/') != -1 || userAgent.indexOf('uc browser/') != -1 || userAgent.indexOf('ubrowser/') != -1) browser = 'UC Browser';
+            if (userAgent.indexOf('ucweb/') != -1) browser = 'UCWEB';
+            if (userAgent.indexOf('msie/') != -1 || userAgent.indexOf('edge/') != -1) browser = userAgent.indexOf('msie/') != -1 ? 'IE' : 'Edge';
+            if (userAgent.indexOf('vivaldi') != -1) browser = 'Vivaldi';
+            if (userAgent.indexOf('dragon/') != -1) browser = 'Dragon';
+            if (userAgent.indexOf('chromium os') != -1 || userAgent.indexOf('chromiumos/') != -1) browser = 'Chromium OS';
+            if (userAgent.indexOf('safezones') != -1 || userAgent.indexOf('safezone') != -1) browser = 'SafeZone';
+            if (browser == 'Other')
+                browser = userAgent.toUpperCase().match(/Android|Micromax|BlackBerry|Lenovo|spreadtrum|iPhone|iPad|iPod|Opera Mini|IEMobile|Nokia|HTC|Mobile|LG|Nexus|Micromax|Moto|Motorola|Oneplus/i);
+            var device = userAgent.match(/Android|Micromax|BlackBerry|Lenovo|spreadtrum|iPhone|iPad|iPod|Opera Mini|IEMobile|Nokia|symbian|HTC|Mobile/i) ? 'Mobile' : 'Desktop';
+            el.innerHTML = el.innerHTML + '<h2>Browser is: : ' + browser + '</h2><h3>Device: ' + device + '</h3>';
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" onclick="myFunction()" value="Analytics" id="anaBtn" />
+    <div id="analyticsDiv">
+
+    </div>
+</body>
+
+</html>
