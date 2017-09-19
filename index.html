@@ -2,14 +2,18 @@
 
 <head>
     <title>Analytics</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
     <script>
-        function analytics() {
+        $('#anaBtn').click(() => {
+            $('#analyticsDiv').empty();
             let userAgent = window.navigator.userAgent.toLowerCase();
             let browser = "Other"
-            alert(userAgent)
+            $('#analyticsDiv').append('<p>Useragent is: ' + userAgent + '</p>');
+
             if ((userAgent.indexOf('chrome/') != -1 || userAgent.indexOf('chromium/') != -1) && (userAgent.indexOf('ucbrowser/') == -1 && userAgent.indexOf('ubrowser/') == -1 && userAgent.indexOf('uc browser/') == -1 && userAgent.indexOf('ucweb/') == -1 && userAgent.indexOf('opera mini/') == -1 && userAgent.indexOf('edge/') == -1 && userAgent.indexOf('opr/') == -1 && userAgent.indexOf('opera mobile/') == -1 && userAgent.indexOf('vivaldi/') == -1 && userAgent.indexOf('dragon/') == -1))
                 browser = 'Chrome';
-            alert(browser);
+            $('#analyticsDiv').append('<p>First browser: ' + browser + '</p>');
             if (userAgent.indexOf('safari/') != -1 && userAgent.indexOf('chromium/') == -1 && userAgent.indexOf('chrome/') == -1 && userAgent.indexOf('ubrowser/') == -1 && userAgent.indexOf('uc browser/') == -1 && userAgent.indexOf('ucweb/') == -1 && userAgent.indexOf('opera mini/') == -1 && userAgent.indexOf('opr/') == -1 && userAgent.indexOf('opera mobile/') == -1 && userAgent.indexOf('vivaldi/') == -1 && userAgent.indexOf('dragon/') == -1)
                 browser = 'Safari'
             if (userAgent.indexOf('opera/') != -1 || userAgent.indexOf('opr/') != -1)
@@ -37,14 +41,16 @@
             if (browser == 'Other')
                 browser = userAgent.toUpperCase().match(/Android|Micromax|BlackBerry|Lenovo|spreadtrum|iPhone|iPad|iPod|Opera Mini|IEMobile|Nokia|HTC|Mobile|LG|Nexus|Micromax|Moto|Motorola|Oneplus/i);
             let device = userAgent.match(/Android|Micromax|BlackBerry|Lenovo|spreadtrum|iPhone|iPad|iPod|Opera Mini|IEMobile|Nokia|symbian|HTC|Mobile/i) ? 'Mobile' : 'Desktop';
-            alert(browser);
-            alert(device);
-        }
+            $('#analyticsDiv').append('<h2>Browser is: : ' + browser + '</h2><h3>Device: ' + device + '</h3>');
+        })
     </script>
 </head>
 
 <body>
-    <input type="button" value="Analytics" onclick="analytics()" />
+    <input type="button" value="Analytics" onclick="analytics()" id="anaBtn" />
+    <div id="analyticsDiv">
+
+    </div>
 </body>
 
 </html>
