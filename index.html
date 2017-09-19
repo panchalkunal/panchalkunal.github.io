@@ -10,7 +10,7 @@
         }
         function myFunction() {
             var el = document.getElementById("analyticsDiv");
-            el.innerHTML = "Inside Function";
+            el.innerHTML += "<p>Inside Function<p>";
             if (window.navigator) {
                 let userAgent = window.navigator.userAgent.toLowerCase();
                 let browser = "Other"
