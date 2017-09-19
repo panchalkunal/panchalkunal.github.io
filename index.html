@@ -4,11 +4,12 @@
     <title>Analytics</title>
 
     <script>
-        document.getElementById("analyticsDiv").innerHTML = '';
-        document.getElementById("analyticsDiv").innerHTML = 'start';
+        function myFunction2() {
+            document.getElementById("analyticsDiv").innerHTML = '';
+            document.getElementById("analyticsDiv").innerHTML = 'start';
+        }
         function myFunction() {
             var el = document.getElementById("analyticsDiv");
-            el.innerHTML = "";
             el.innerHTML = "Inside Function";
             if (window.navigator) {
                 let userAgent = window.navigator.userAgent.toLowerCase();
@@ -34,7 +35,7 @@
                 var device = userAgent.match(/Android|Micromax|BlackBerry|Lenovo|spreadtrum|iPhone|iPad|iPod|Opera Mini|IEMobile|Nokia|symbian|HTC|Mobile/i) ? 'Mobile' : 'Desktop';
                 el.innerHTML = el.innerHTML + '<h2>Browser iss: : ' + browser + '</h2><h3>Device: ' + device + '</h3>';
             }
-            else{
+            else {
                 el.innerHTML = el.innerHTML + ' ' + 'Navigator not preset';
             }
 
@@ -42,7 +43,7 @@
     </script>
 </head>
 
-<body>
+<body onload="myFunction2()">
     <input type="button" onclick="myFunction()" value="Analytics" id="anaBtn" />
     <div id="analyticsDiv">
 
