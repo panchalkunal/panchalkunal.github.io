@@ -6,6 +6,7 @@
         crossorigin="anonymous"></script>
     <script>
         $('#anaBtn').click(() => {
+            console.log('Clicked');
             $('#analyticsDiv').empty();
             let userAgent = window.navigator.userAgent.toLowerCase();
             let browser = "Other"
